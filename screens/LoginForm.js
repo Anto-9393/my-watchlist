@@ -1,21 +1,14 @@
 
 import { useNavigation } from '@react-navigation/native';
 import * as React from 'react';
-import { useState } from 'react';
 import { Text, View, StyleSheet,
-  TouchableOpacity,
   Button,
   ImageBackground,
   Alert} from 'react-native';
-import { Input, Card, Divider } from 'react-native-elements';
 import { TextInput } from 'react-native-paper';
 import HomeScreen from './HomeScreen';
-
 import * as firebase from 'firebase'; 
-import GetScreen from './GetScreen';
-import Prova from './Prova';
 
- 
 
  function  LoginForm () {
 
@@ -25,18 +18,18 @@ const [state, setState] = React.useState({
   password: "",
 });
 
-
+//Login and Registration on Firebase
 const singnUpUser = () =>{
   firebase
   .auth().createUserWithEmailAndPassword(state.email.trim(),state.password)
   .then(user => {
     if (firebase.auth().currentUser) {
       const userId = firebase.auth().currentUser.uid;
-      if (userId) {
+    if (userId) {
         firebase
-          .database()
-          .ref('utenti/' + userId + '/utenti/')
-          .set({ email: state.email });
+        .database()
+        .ref('utenti/' + userId + '/utenti/')
+        .set({ email: state.email });
       };
   }
 }).catch((error)=> {
@@ -49,8 +42,6 @@ const signIn = () => {
   .signInWithEmailAndPassword(state.email.trim(),state.password)
   .then(() => {
     navigation.navigate(HomeScreen);
-    
-    
   }).catch((error)=> {
     Alert.alert(error.message)
 });

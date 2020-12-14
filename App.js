@@ -28,8 +28,7 @@ const firebaseConfig = {
 // You can import from local files
 import AssetExample from './components/AssetExample';
 import HomeScreen from './screens/HomeScreen';
-import GetScreen from './screens/GetScreen';
-import Prova from './screens/Prova';
+import DetailScreen from './screens/DetailScreen';
 import LoginScreen from './screens/LoginScreen';
 import LoginForm from './screens/LoginForm';
 import { render } from 'react-dom';
@@ -79,7 +78,7 @@ export default function App () {
             fontFamily: 'monospace',
             color: 'white'
           },
-        }}   component= {Prova}/>
+        }}   component= {DetailScreen}/>
         
       </Stack.Navigator>
 

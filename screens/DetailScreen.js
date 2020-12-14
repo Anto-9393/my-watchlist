@@ -5,7 +5,7 @@ import Divider from 'react-native-elements';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 
 
-class  Prova extends React.Component{
+class DetailScreen extends React.Component{
   state = {
       done:false,
       element:[]
@@ -18,12 +18,6 @@ class  Prova extends React.Component{
 
 
 
-_/*removeElement() {
-    const array = this.state.element
-
-}
-
-*/
  render() {
     const {thumbnail}=this.props.route.params
     const {title} = this.props.route.params
@@ -32,11 +26,7 @@ _/*removeElement() {
     const {directors} = this.props.route.params
     const {stars} = this.props.route.params
     
-    console.log("Element", this.state.element)
-
- 
-
-  return (
+    return (
      <View  style={styles.container}>
          <View style={styles.image}>
             <Image style={{width:180 ,height:200,borderWidth:5, }} source={{uri: thumbnail}}/>
@@ -58,24 +48,20 @@ _/*removeElement() {
                 <Text style={styles.castText} >Stars: {stars}</Text>
                 <TouchableHighlight  style={{marginTop:5}} onPress={() => this._addElement({title})}>
                 {this.state.done ?
-                     <Button title="Rimuovi dalla Watchlist" color="red"/>     :
-                     <Button title="Aggiungi alla Watchlist" color="green"  /> 
-            }
+                     <Button title="Rimuovi dalla Watchlist" color="red"/> :
+                     <Button title="Aggiungi alla Watchlist" color="green"/> 
+                }
                 </TouchableHighlight>
-                <Button title="ciao" onPress={() => this.props.navigation.navigate.push('HomeScreen' , {pippo:'How are you'}) }/>
+               
             </View>
-            
         </View>
         </ScrollView>
-    </View>
-
-      
-   
-    
+    </View>   
   );
           }
 }
-    const styles = StyleSheet.create({
+    
+const styles = StyleSheet.create({
         container: {
         flex:1,
         backgroundColor:'#181818'
@@ -136,4 +122,4 @@ _/*removeElement() {
     })
     
 
-export default Prova;
+export default DetailScreen;

@@ -31,7 +31,7 @@ state = {
 
    async componentDidMount() {
    await this._getData();
-   await this._getPopular();}
+   }
 
 _getData = async () => {
   
@@ -102,26 +102,23 @@ console.log("text: " )
  
 render(){
   console.log("props_", this.props.route)
-  const {pippo} = this.props.route.params.pippo
  
+
   return(
     
-    <View style = {styles.container}>
-     
+  <View style = {styles.container}>
     <View>
-     
       <TextInput
       style = {styles.input}
       placeholder ="Search movies"
       onChangeText= {this.onChangeText()}/>
-      
-    </View>
+      </View>
     <Icon  style={styles.search} name="search" color="grey" size={18}/>
     
-  <ScrollView>
+   <ScrollView>
     <View style={{marginTop:15, marginLeft:10}}>
     <Text style= {styles.ht}>New Release </Text>
-    </View>
+  </View>
    
   <FlatList
   contentContainerStyle={{paddingHorizontal:5}}
@@ -135,7 +132,7 @@ render(){
         
       />
       <Text style= {styles.ht}> MyWatchlist </Text>
-      <Text style= {styles.ht}> {pippo} </Text>
+      <Text style= {styles.ht}>  </Text>
      
   </ScrollView>
   
@@ -144,7 +141,7 @@ render(){
    
   
     
-    </View>
+  </View>
     
   )
 }
