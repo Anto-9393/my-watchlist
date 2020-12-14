@@ -14,7 +14,10 @@ class  Prova extends React.Component{
   _addElement(title) {
     this.setState({done:!this.state.done})
     this.state.element.push(title)
-}
+} 
+
+
+
 _/*removeElement() {
     const array = this.state.element
 
