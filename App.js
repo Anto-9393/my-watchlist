@@ -31,7 +31,6 @@ import HomeScreen from './screens/HomeScreen';
 import DetailScreen from './screens/DetailScreen';
 import LoginScreen from './screens/LoginScreen';
 import LoginForm from './screens/LoginForm';
-import { render } from 'react-dom';
 import { Button } from 'react-native-paper';
 
 
